@@ -1,0 +1,61 @@
+/* Basic page styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Gallery layout */
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+article {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article img {
+  max-width: 100%;
+  border-radius: 6px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+article h2 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+article p {
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555;
+}
