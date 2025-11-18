@@ -1,1 +1,51 @@
-<h1>Hello!!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Art & Photography</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>My Art & Photography</h1>
+  </header>
+
+  <main id="gallery"></main>
+
+  <script>
+    // Load posts dynamically from the posts folder
+    async function loadPosts() {
+      const gallery = document.getElementById("gallery");
+
+      // GitHub Pages cannot list folders automatically, so you must manually
+      // list your post folder names here:
+      const postFolders = [
+        // Example:
+        // "post1",
+        // "summer-landscape",
+        // "portrait-series-01",
+      ];
+
+      for (const folder of postFolders) {
+        const title = await fetch(`posts/${folder}/title.txt`).then(r => r.text());
+        const description = await fetch(`posts/${folder}/description.txt`).then(r => r.text());
+
+        // Assumes each post folder contains at least one image
+        const image = await fetch(`posts/${folder}/`).then(() => `posts/${folder}/image.jpg`);
+
+        const article = document.createElement("article");
+        article.innerHTML = `
+          <img src="${image}" alt="${title}" />
+          <h2>${title}</h2>
+          <p>${description}</p>
+        `;
+
+        gallery.appendChild(article);
+      }
+    }
+
+    loadPosts();
+  </script>
+</body>
+</html>
