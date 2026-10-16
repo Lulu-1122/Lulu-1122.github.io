@@ -1,52 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Art & Photography</title>
-  <link rel="stylesheet" href="style.css" />
+<html>
+<head> 
+   <title> Lucy Ames Practice Website</title>
+   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
-    <h1>My Art & Photography</h1>
-  </header>
+    <h1>Basic Scone Recipe</h1>
+    <p class= subtitle><h2>The perfect base recipe for countless scone flavours.</h2></p> 
+  </header> 
 
-  <main id="gallery"></main>
+  <nav class="site-nav" aria-label="Page sections">
+    <span>Jump to:</span>
+        <a href="#Ingredients">Ingredients</a>
+        <a href="#Instructions">Instructions</a>
+        <a href="#Modifications">Modifications</a>
+  </nav>
 
-  <script>
-    // Load posts dynamically from the posts folder
-    async function loadPosts() {
-      const gallery = document.getElementById("gallery");
-
-      // GitHub Pages cannot list folders automatically, so you must manually
-      // list your post folder names here:
-      const postFolders = [
-        // Example:
-        // "post1",
-        // "summer-landscape",
-        // "portrait-series-01",
-        "Test"
-      ];
-
-      for (const folder of postFolders) {
-        const title = await fetch(`posts/${folder}/title.txt`).then(r => r.text());
-        const description = await fetch(`posts/${folder}/description.txt`).then(r => r.text());
-
-        // Assumes each post folder contains at least one image
-        const image = await fetch(`posts/${folder}/`).then(() => `posts/${folder}/image.jpg`);
-
-        const article = document.createElement("article");
-        article.innerHTML = `
-          <img src="${image}" alt="${title}" />
-          <h2>${title}</h2>
-          <p>${description}</p>
-        `;
-
-        gallery.appendChild(article);
-      }
-    }
-
-    loadPosts();
-  </script>
+  <main>
+   <p> This is my favourite recipe for scones! I like to use greek yogurt and protein milk so I can pretend to be healthy while eating baked goods. I hope you enjoy your "healthy" scones!</p>
+  <section>
+    <h4 id="Ingredients">Ingredients</h4>
+      <ul> 
+        <li>2 cups (250g) all-purpose flour</li>
+        <li>1/4 cup (50g) granulated sugar</li>
+        <li>2 teaspoons baking powder</li>
+        <li>1/2 teaspoon salt</li>
+        <li>1/2 cup (113g) cold butter</li>
+        <li>1/4 cup greek yogurt</li>
+        <li>1/4 cup milk</li>
+        <li>1/4 teaspoon vanilla extract</li>
+        <li>1/2 cup add ins (optional)</li>
+      </ul> 
+  </section>
+  
+  <section>
+    <h4 id="Instructions">Instructions</h4>
+    <ol>
+        <li>Preheat oven to 375 degrees Farenheit</li>
+        <li> Combine 2 cups of flour, a 1/4 cup of sugar, 2 teaspoons of baking powder, and a 1/2 teaspoon of salt in a large bowl </li>
+        <li>Cut in a 1/2 cup of butter</li>
+        <li>Mix in a 1/4 cup of greek yogurt, a 1/4 cup of milk, and a 1/4 teaspoon of vanilla</li>
+      <li>Form dough</li>
+      <li>Fold in your 1/2 of add-ins if desired</li>
+      <li>Form a round and cut into 8 wedges</li>
+      <li>Sprinkle with sugar if desired</li>
+      <li>Bake for about 15 minuted or until golden around the edges</li>
+    </ol>
+    <p><b>Note:</b> I recommend letting them cool for about 10 minutes before eating, as the centers may be a bit doughy when fresh out of the oven.</p>
+  </section>
+    
+  <section>
+    <h4 id="Modifications">Some of my Favourite Modifications</h4>
+      <ul>
+        <li>Brown sugar and cinnamon</li>
+          <ul>
+            <li>Replace granulated sugar with brown sugar (1:1 ratio)<li
+            <li>Add a teaspoon (or more or less to taste) of cinnamon with the other dry ingredients</li>
+          </ul>
+        <li>Lemon blueberry</li>
+          <ul>
+            <li>Add the zest of one lemon to the dry ingredients</li>
+            <li>Add a 1/2 of bluberries as you add-in</li>
+            <li>Combine the juice of half a lemon with 1 cup of powdered sugar to make a glaze (let the scones cool before glazing)</li>
+          </ul>
+        <li>Third modification?</li>
+      </ul>
+  </section>
+</main>
 </body>
-</html>
