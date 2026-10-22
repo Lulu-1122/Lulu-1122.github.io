@@ -1,3 +1,22 @@
+.home-nav {
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.home-nav a {
+  display: inline-block;
+  background-color: #8b745a;
+  color: #FFFFF0;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 2px solid #3e240c;
+  border-radius: 4px;
+}
+
+.home-nav a:hover {
+  background-color: #3e240c;
+}
+
 header {
   background-color: #8b745a;
   border-bottom: 8px solid #3e240c;
@@ -9,19 +28,8 @@ header {
   align-items: center;
   gap: 15px;
   background-color: #8b745a;
-  padding: 10px 20px;
-  border-bottom: 1px solid #dee2e6;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.site-nav ul {
-  display: flex;
-  list-style: none;
+  padding: 12px;
   margin: 0;
-  padding: 0;
-  gap: 15px;
 }
 
 .site-nav a {
@@ -32,6 +40,11 @@ header {
 
 .site-nav a:hover {
   text-decoration: underline;
+  color: #3e240c;
+}
+
+.site-nav .separator {
+  color: #3e240c;
 }
 
 body{
